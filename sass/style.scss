@@ -1,0 +1,208 @@
+// Colors
+
+$rouge: #EF1926;
+$eelv: #4BB166;
+$pcf: $rouge;
+$generations: #FFEC00;
+$lfi: #9A36E0;
+$ps: #E6255B;
+$black: #1D1D1B;
+
+// Typography
+
+// TODO: better fallback list
+
+@font-face {
+    font-family: "Barlow Condensed ExtraBold";
+    src: url("/fonts/BarlowCondensed-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "Barlow Condensed Bold";
+    src: url("/fonts/BarlowCondensed-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url("/fonts/Barlow-Regular.ttf");
+}
+
+
+body {
+    font-family: "Barlow", sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+}
+
+h1 {
+    font-family: "Barlow Condensed ExtraBold", sans-serif;
+    font-size: 80pt;
+    line-height: 0.8em;
+}
+
+h2 {
+    font-size: 40pt;
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    color: $rouge;
+}
+
+h2, h3, header {
+    font-family: "Barlow Condensed Bold", sans-serif;
+}
+
+.title {
+    display: block;
+    color: $rouge;
+    font-family: "Barlow Condensed ExtraBold", sans-serif;
+    font-size: 80pt;
+    line-height: 0.8em;
+    margin: 0.2em 0;
+
+    small {
+        display: block;
+        font-size: 0.5em;
+        line-height: 0.8em;
+    }
+}
+
+// Layout
+
+$stripes-width: max(2rem, 5vw);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        height: 2em;
+    }
+}
+
+header {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+
+    text-transform: uppercase;
+    font-size: 2em;
+
+    .title {
+        max-width: 75%;
+    }
+
+    p {
+        line-height: 1em;
+    }
+
+    sup {
+        text-transform: none;
+        // The text will still be visible,
+        // but won't make the line it belongs to
+        // taller than the others.
+        line-height: 0;
+    }
+
+    aside {
+        flex: 1;
+        background-image: url("/asma.jpg");
+        background-position: center;
+        background-size: cover;
+        min-height: 80vh;
+        margin: 0 $stripes-width;
+    }
+
+    aside::before, aside::after {
+        content: '';
+        width: $stripes-width;
+        height: 100%;
+        background: linear-gradient(
+            $eelv 0%,
+            $eelv 20%,
+            $pcf 20%,
+            $pcf 40%,
+            $generations 40%,
+            $generations 60%,
+            $lfi 60%,
+            $lfi 80%,
+            $ps 80%,
+            $ps 100%
+        );
+        display: block;
+        position: relative;
+        transform: skewY(-20deg);
+    }
+
+    aside::before {
+        transform-origin: top right;
+        border-radius: 5px 0 0 5px;
+        left: calc(-1 * $stripes-width);
+    }
+    aside::after {
+        transform-origin: top left;
+        border-radius: 0 5px 5px 0;
+        left: 100%;
+        top: -100%;
+    }
+
+    main {
+        flex: 1;
+        margin-right: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+body > main {
+    max-width: 60vw;
+    margin: auto;
+}
+
+.logos {
+    color: $rouge;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+
+    svg {
+        width: 100%;
+        min-width: 3em;
+        max-height: 2em;
+        flex: 1;
+    }
+}
+
+@media (max-width: 1000px) {
+    header {
+        flex-direction: column;
+        aside {
+            flex: initial;
+            height: 40vh;
+        }
+    }
+
+    main {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+// Other
+
+ol {
+    li {
+        margin: 1em 0;
+    }
+}

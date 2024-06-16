@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %} Asma Rharmaoui-Claquin {% endblock
+title %} {% block content %}
+<nav>
+    <h3>
+        Élections législatives 2024
+    </h3>
+    <a href="https://www.nouveaufrontpopulaire.fr/">
+        <img src="/logos/nfp-rouge.png" alt="Nouveau Front Populaire">
+    </a>
+</nav>
+<header>
+    <aside></aside>
+    <main>
+        <div>
+            <p>Le 30 juin et 7 juillet, votez</p>
+            <h1 class="title">Asma Rharmaoui-Claquin</h1>
+            <p>
+                Candidate du
+            </p>
+            <h2 class="title">
+                <small>Nouveau</small>
+                Front
+                Populaire
+            </h2>
+            <p>
+                pour la 7<sup>ème</sup> circonscription des Français de l'étranger.
+            </p>
+        </div>
+        <div class="logos">
+            {{ load_data(path="static/logos/eelv-mono.svg") | safe }}
+            {{ load_data(path="static/logos/ps-mono.svg") | safe }}
+            {{ load_data(path="static/logos/lfi-mono.svg") | safe }}
+            {{ load_data(path="static/logos/pcf-mono.svg") | safe }}
+        </div>
+    </main>
+</header>
+
+<main>
+    <h2>10 mesures phare</h2>
+    <ol>
+        <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed
+            possimus sequi eveniet quod nesciunt nostrum tenetur excepturi, voluptates
+            tempora sapiente dolore cum hic harum quam facere, error enim! Laboriosam.
+        </li>
+        <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed
+            possimus sequi eveniet quod nesciunt nostrum tenetur excepturi, voluptates
+            tempora sapiente dolore cum hic harum quam facere, error enim! Laboriosam.
+        </li>
+        <li>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sed
+            possimus sequi eveniet quod nesciunt nostrum tenetur excepturi, voluptates
+            tempora sapiente dolore cum hic harum quam facere, error enim! Laboriosam.
+        </li>
+    </ol>
+</main>
+{% endblock content %}
